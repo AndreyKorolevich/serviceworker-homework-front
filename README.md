@@ -1,5 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/6tyb8uxyv13u48dv?svg=true)](https://ci.appveyor.com/project/AndreyKorolevich/serviceworker-homework-front)
-- deployment: <a href="https://andreykorolevich.github.io/serviceworker-homework-back/">Github Pages</a>
+- deployment: <a href="https://andreykorolevich.github.io/serviceworker-homework-front/">Github Pages</a>
 ### Loading Styling
 
 #### Легенда
