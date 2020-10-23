@@ -1,14 +1,14 @@
 {
-  "name": "ajs",
+  "name": "neto-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint .",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "coverage": "jest --coverage",
+    "lint": "eslint .",
+    "build": "webpack --mode production",
     "doc": "jsdoc -c jsdoc.conf.json",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
@@ -17,7 +17,8 @@
     "preshow:dist": "npm run build",
     "show:dist": "live-server dist"
   },
-  "author": "Andrew",
+  "keywords": [],
+  "author": "coursar",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -30,7 +31,6 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-restricted-globals": "^0.2.0",
-    "file-loader": "^6.0.0",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.3",
     "jest": "^25.2.4",
@@ -40,7 +40,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "worker-loader": "^3.0.4"
+    "workbox-webpack-plugin": "^5.1.4",
+    "worker-loader": "^2.0.0"
   },
   "dependencies": {
     "core-js": "^3.6.4"

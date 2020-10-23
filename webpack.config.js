@@ -9,8 +9,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(service.worker\.(js)$)|(\.(txt)$)/i,
-        use: [
+        test: /service.worker\.js$/,
+        loader: [
           {
             loader: 'file-loader',
             options: {
