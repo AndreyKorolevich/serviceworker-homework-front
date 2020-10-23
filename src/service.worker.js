@@ -1,4 +1,4 @@
-const version = 'v1';
+const version = 'v2';
 const cacheName = `ahj-${version}`;
 
 const files = [
@@ -21,7 +21,7 @@ async function removeOldCache(retain) {
 }
 
 self.addEventListener('install', (evt) => {
-  console.log(evt);
+  console.log('sdf');
   evt.waitUntil((async () => {
     await putFilesToCache(files);
     await self.skipWaiting();
@@ -38,19 +38,20 @@ self.addEventListener('activate', (evt) => {
 
 self.addEventListener('fetch', (evt) => {
   const requestUrl = new URL(evt.request.url);
-
   if (requestUrl.pathname.startsWith('/news')) {
     return;
   }
 
   evt.respondWith((async () => {
     const cache = await caches.open(cacheName);
-    const cachedResponse = await cache.match(evt.request);
-
-    if (cachedResponse) {
-      return cachedResponse;
+    try {
+      const response = await fetch(evt.request);
+      if (response.ok) evt.waitUntil(cache.put(evt.request, response.clone()));
+      return response;
+    } catch (e) {
+      const cachedResponse = await cache.match(evt.request);
+      if (cachedResponse) return cachedResponse;
+      throw new Error(e.message);
     }
-
-    return fetch(evt.request);
   })());
 });
