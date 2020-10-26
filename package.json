@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "core-js": "^3.6.4"
+    "core-js": "^3.6.4",
+    "workbox-webpack-plugin": "^5.1.4"
   }
 }

@@ -8,7 +8,6 @@ if (navigator.serviceWorker) {
     try {
       await navigator.serviceWorker.register(
         '/service.worker.js',
-        { scope: './' },
       );
     } catch (e) {
       console.log(e);
