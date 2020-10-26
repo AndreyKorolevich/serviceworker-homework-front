@@ -7,16 +7,13 @@ export default class Widget {
 
   async start() {
     this.addBlock();
-    setTimeout(() => {
-      if (this.data === null) this.showModule();
-    }, 2000);
     try {
       this.data = await this.api();
-      this.hiddenModule();
+      this.hiddenModal();
       this.container.innerHTML = '';
       this.data.news.forEach((e) => this.addNews(e));
     } catch (e) {
-      console.error(e);
+      this.showModal();
     }
   }
 
@@ -48,11 +45,11 @@ export default class Widget {
   }
 
   /* eslint-disable */
-  showModule() {
+  showModal() {
     document.querySelector('.module').classList.remove('hidden');
   }
 
-  hiddenModule() {
+  hiddenModal() {
     document.querySelector('.module').classList.add('hidden');
   }
 

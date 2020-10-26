@@ -1,10 +1,10 @@
-const version = 'v1';
+const version = 'v2';
 const cacheName = `ahj-${version}`;
 
 const files = [
   '/',
-  '/js/app.js',
-  '/js/Widget.js',
+  '/main.css',
+  '/main.js',
 ];
 
 async function putFilesToCache(file) {
@@ -21,7 +21,7 @@ async function removeOldCache(retain) {
 }
 
 self.addEventListener('install', (evt) => {
-  console.log('sdf');
+  console.log(evt);
   evt.waitUntil((async () => {
     await putFilesToCache(files);
     await self.skipWaiting();

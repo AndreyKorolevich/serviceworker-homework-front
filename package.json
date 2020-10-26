@@ -2,7 +2,7 @@
   "name": "neto-template",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "test": "jest",
@@ -31,6 +31,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-restricted-globals": "^0.2.0",
+    "file-loader": "^6.0.0",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.3",
     "jest": "^25.2.4",
@@ -39,9 +40,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "workbox-webpack-plugin": "^5.1.4",
-    "worker-loader": "^2.0.0"
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "core-js": "^3.6.4"
