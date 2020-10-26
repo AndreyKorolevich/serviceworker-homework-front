@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, './src');
 
@@ -11,6 +10,17 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /service.worker\.js$/,
+        loader: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
       {
         test: /\.js$/,
         include: `${APP_DIR}/js`,
@@ -52,10 +62,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
     }),
   ],
 };
